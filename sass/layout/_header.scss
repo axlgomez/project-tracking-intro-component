@@ -1,0 +1,68 @@
+@use "../base/" as *;
+@use "../abstract/" as *;
+
+body
+{
+    &::after
+    {
+        content: "";
+        background-color: $light-grayish-blue;
+        width: 50%;
+        height: 70%;
+        @include position(absolute, $top: 0, $right: 0);
+        border-bottom-left-radius: 3rem;
+        z-index: -1;
+        overflow-x: hidden;
+    }
+}
+
+.header
+{
+    overflow-x: hidden;
+    z-index: 1;
+
+    &__icons
+    {
+        padding: 2rem 7% 0;
+        @include flex(flex, $justify: space-between, $align: center);
+    }
+
+    &__logo
+    {
+        width: 22px;
+    }
+
+    &__menu 
+    {
+    font-size: 24px;
+
+        @include break-point(portatil)
+        {
+            display: none;
+        }
+    }
+
+    &__devices
+    {
+        margin-top: 3rem;
+        width: 130%;
+
+        @include break-point(movil-L)
+        {
+            width: 80%;
+            margin: auto;
+            height: auto;
+            padding-top: 2rem;
+        }
+
+        @include break-point(tablet)
+        {
+            width: 60%;
+        }
+
+        @include break-point(portatil)
+        {
+            display: none;
+        }
+    }
+}

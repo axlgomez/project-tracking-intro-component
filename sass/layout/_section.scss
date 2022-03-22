@@ -1,0 +1,134 @@
+
+@use "../base/" as *;
+@use "../abstract/" as *;
+
+
+.dashboard
+{
+    font-family: $font-primary;
+    font-size: $size;
+    padding: 5rem 7%;
+    text-transform: uppercase;
+
+    @include break-point(tablet)
+    {
+        text-align: center;
+    }
+
+    @include break-point(portatil)
+    {
+        @include flex(flex, $direction: row-reverse);
+        overflow-x: hidden;
+    }
+
+    &__img
+    {
+        display: none;
+
+         @include break-point(portatil)
+         {
+             display: block;
+            //  transform: translateX(6rem);
+         }
+    }
+
+    &__content
+    {
+        text-align: start;
+    }
+
+    &__title
+    {
+        color: $grayish-blue;
+        letter-spacing: 2px;
+    }
+
+    &__span
+    {
+        background: $very-dark-blue;
+        color: $light-grayish-blue;
+        font-weight: map-get($weights-primary, bold);
+        font-size: 1rem;
+        letter-spacing: 1px;
+        margin-right: .7rem;
+        padding: .1rem .5rem .2rem;
+        border-radius: .7rem;
+    }
+
+    &__title-primary
+    {
+        color: $very-dark-blue;
+        font-size: 2.5rem;
+        line-height: 1;
+        margin-top: 1rem;
+
+        @include break-point(portatil)
+        {
+            font-size: 3.6rem;
+        }
+    }
+
+    &__text
+    {
+        font-family: $font-secondary;
+        text-transform: none;
+        margin: .5rem 0 1rem;
+        color: $very-dark-blue;
+
+        @include break-point(portatil)
+        {
+            margin: 1.5rem 0 2.5rem;
+            padding-right: 14rem;
+        }
+    }
+
+    &__buttons
+    {
+
+        @include break-point(movil-S)
+        {
+            text-align: center;
+            margin-top: 2rem;
+        }
+    }
+
+    &__btn
+    {
+        text-transform: uppercase;
+        font-family: $font-primary;
+        font-weight: map-get($weights-primary, bold);
+        font-size: .8rem;
+        letter-spacing: 1px;
+        color: $light-grayish-blue;
+        padding: .5rem 1rem;
+        background: $red;
+        border: none; outline: none;
+        border-radius: .3rem;
+        cursor: pointer;
+
+        &:hover
+        {
+            opacity: .8;
+        }
+
+        @include break-point(portatil)
+        {
+            font-size: 1rem;
+            padding: .5rem 1.8rem;
+        }
+
+        &-secondary
+        {
+            background: transparent;
+            color: $grayish-blue;
+            font-weight: map-get($weights-primary, regular);
+            font-size: .8rem;
+
+            @include break-point(portatil)
+            {
+                font-size: .9rem;
+                letter-spacing: 2px;
+            }
+        }
+    }
+}

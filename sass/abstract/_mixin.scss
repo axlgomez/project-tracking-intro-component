@@ -1,0 +1,33 @@
+@mixin break-point($breakpoint) {
+    @if $breakpoint == movil-S {
+        @media screen and (max-width: 320px) { @content }
+    }
+
+    @if $breakpoint == movil-L {
+        @media screen and (min-width: 500px) { @content }
+    }
+
+    @if $breakpoint == tablet {
+        @media screen and (min-width: 768px) { @content }
+    }
+
+    @if $breakpoint == portatil {
+        @media screen and (min-width: 1024px) { @content }
+    }
+};
+
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
+    position: $position;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+};
+
+@mixin flex($display, $justify: null, $direction: null, $gap: null, $align: null) {
+    display: $display;
+    justify-content: $justify;
+    flex-direction: $direction;
+    gap: $gap;
+    align-items: $align;
+}

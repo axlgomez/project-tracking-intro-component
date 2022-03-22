@@ -1,0 +1,96 @@
+@use "../base/" as *;
+@use "../abstract/" as *;
+
+
+.navDesktop
+{
+    display: none;
+
+    @include break-point(portatil)
+    {
+        display: block;
+        text-transform: uppercase;
+        list-style: none;
+        font-family: $font-primary;
+        font-weight: map-get($weights-primary, bold);
+    }
+
+    &__items
+    {
+        display: inline;
+    }
+
+    &__item
+    {
+        text-decoration: none;
+        margin: 0 1.5rem;
+        color: $very-dark-blue;
+        letter-spacing: 1px;
+
+        &-login
+        {
+            color: $grayish-blue;
+        }
+
+        &:hover
+        {
+            text-decoration: underline;
+        }
+    }
+}
+
+
+.nav
+{
+    width: 85%;
+    margin: auto;
+    @include position(absolute, $top: 5.5rem, $right: 0, $left: 0);
+    text-align: center;
+    list-style: none;
+    background: #fff;
+    box-shadow: 0 10px 25px rgba($color: $very-dark-blue, $alpha: .3);
+    padding: 1rem;
+    text-transform: uppercase;
+    font-family: $font-primary;
+    font-weight: map-get($weights-primary, bold);
+    border-radius: .3rem;
+    transition: all .3s ease-in-out;
+    display: none;
+
+    &.expand
+    {
+        display: block;
+        animation: fadeIn .5s;
+    }
+
+    @keyframes fadeIn {
+        from {opacity: 0;}
+        to {opacity: 1;}
+    };
+
+    &__items
+    {
+        display: block;
+    }
+
+    &__item
+    {
+        text-decoration: none;
+        color: $very-dark-blue;
+        letter-spacing: 1px;
+        line-height: 2.5;
+
+        &-login
+        {
+            color: $grayish-blue;
+        }
+    }
+
+    hr
+    {
+        height: 1px;
+        width: 90%;
+        border: none;
+        background: rgba($color: $grayish-blue, $alpha: .5);
+    }
+}
